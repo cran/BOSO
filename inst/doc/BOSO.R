@@ -11,10 +11,10 @@ library(ggpubr)
 ## ----style, echo = FALSE, results = 'asis'------------------------------------
 ##BiocStyle::markdown()
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  install.packages("BOSO")
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  if (!requireNamespace('cplexAPI', quietly = TRUE)) {
 #    testthat::skip('Package cplexAPI not installed (required for this vignette)!\n
 #           Install it from CRAN: https://cran.r-project.org/web/packages/cplexAPI/index.html')
@@ -22,7 +22,7 @@ library(ggpubr)
 #           Install it from CRAN: https://cran.r-project.org/web/packages/cplexAPI/index.html', call. = FALSE)
 #  }
 
-## ---- eval=TRUE---------------------------------------------------------------
+## ----eval=TRUE----------------------------------------------------------------
 if (!requireNamespace('bestsubset', quietly = TRUE)) {
   devtools::source_url("https://raw.githubusercontent.com/ryantibs/best-subset/master/bestsubset/R/fs.R")
   devtools::source_url("https://raw.githubusercontent.com/ryantibs/best-subset/master/bestsubset/R/lasso.R")
@@ -364,7 +364,7 @@ plot.from.sim = function(sim.list,
     xlab(xlab) + ylab(ylab) + coord_cartesian(ylim=ylim) +
     geom_line(lwd=lwd) + geom_point(pch=pch) +
     # facet_grid(formula(paste(row,"~",col))) +
-    theme_bw() + theme(legend.pos=legend.pos)
+    theme_bw() + theme(legend.position=legend.pos)
   if (!("snr" %in% c(row,col))) {
     # If SNR is being plotted on the x-axis in each plot, then define special
     # x-axis ticks and put the x-axis on a log scale

@@ -108,8 +108,8 @@
 #'   #This first example is a basic 
 #'   #example of how to execute BOSO
 #'   
-#'   \donttest{
 #'   data("sim.xy", package = "BOSO")
+#'   if (requireNamespace('cplexAPI')){
 #'   obj <- BOSO(x = sim.xy[['low']]$x,
 #'               y = sim.xy[['low']]$y,
 #'               xval = sim.xy[['low']]$xval,
@@ -118,9 +118,8 @@
 #'               nlambda=50,
 #'               intercept= 0, standardize = 0,
 #'               Threads=1, verbose = 3, seed = 2021)
-#'   coef(obj)  # extract coefficients at a single value of lambda
-#'   predict(obj, newx = sim.xy[['low']]$x[1:20, ])  # make predictions
 #'   }
+#'   
 #'
 #' @author Luis V. Valcarcel
 #' @export BOSO
